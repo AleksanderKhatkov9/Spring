@@ -4,7 +4,7 @@
         xmlns:context="http://www.springframework.org/schema/context"
         xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="musicBean"
@@ -13,7 +13,13 @@
 
     <bean id="musicPlayer"
         class="org.example.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="music" ref="musicBean"/>
+
+
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+        <property name="name" value="Some name music"/>
+        <property name="volume" value="70"/>
     </bean>
 
 </beans>
